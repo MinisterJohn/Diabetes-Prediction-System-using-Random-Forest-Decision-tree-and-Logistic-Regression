@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction System - Home</title>
+   <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.content {
+    text-align: center;
+    padding: 50px;
+}
+
+.content h2 {
+    color: #333;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+
+
+/* Styling for the content2 */
+.content2 {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+/* Styling for form labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Styling for form inputs */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styling for the Predict button */
+.button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Styling for the footer */
+.footer {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+   </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Diabetes Prediction System</h1>
+        <p>Your trusted partner in diabetes risk assessment.</p>
+    </div>
+    
+    <div class="content">
+        <h2>Welcome to Our System</h2>
+        <p>We provide accurate predictions for diabetes risk based on various factors.</p>
+    </div>
+    
+        <div class="content2">
+            <h2>Enter Variables for Diabetes Prediction</h2>
+            <form action="{% url 'result' %}">
+              {% csrf_token %}
+                <label for="pregnancies">Number of Pregnancies:</label>
+                <input type="number" id="pregnancies" name="pregnancies" required><br><br>
+    
+                <label for="glucose">Glucose Level:</label>
+                <input type="number" id="glucose" name="glucose" required><br><br>
+    
+                <label for="bp">Blood Pressure:</label>
+                <input type="number" id="bloodpressure" name="bloodpressure" required><br><br>
+    
+                <label for="skinthickness">Skin Thickness:</label>
+                <input type="number" id="skinthickness" name="skinthickness" required><br><br>
+    
+                <label for="insulin">Insulin Level:</label>
+                <input type="number" id="insulin" name="insulin" required><br><br>
+    
+                <label for="bmi">BMI:</label>
+                <input type="number" id="bmi" name="bmi" required><br><br>
+    
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required><br><br>
+
+                <label for="diabetespedigreefunction">Diabetes Pedigree Function:</label>
+                <input type="number" id="diabetespedigreefunction" name="diabetespedigreefunction" required><br><br>
+
+                <center><button class="button" type="submit">Predict Diabetes</button></center>
+            </form>
+        </div>
+        <div class="footer">
+          <p>&copy; 2023 Diabetes Prediction System</p>
+      </div>
+  
+    </body>
+    </html>
+    
+
+  
+  
+
